@@ -1,3 +1,10 @@
+class Array
+  def rand
+    self.random if self.respond_to?(:random)
+    self[Kernel.rand(self.size)]
+  end
+end
+
 module Populator
   # This module adds several methods for generating random data which can be
   # called directly on Populator.
